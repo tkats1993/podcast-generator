@@ -13,6 +13,8 @@ build-essential \
 python3-dev \
 libyaml-dev
 
+RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && python3.10 get-pip.py
+
 RUN python3.10 -m pip install --upgrade pip 
 
 RUN pip3 install PyYAML
