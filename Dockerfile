@@ -1,17 +1,11 @@
 FROM ubuntu:latest
 
 RUN apt-get update && apt-get install -y \
-software-properties-common \
-&& add-apt-repository ppa:deadsnakes/ppa \
-&& apt-get update \
-&& apt-get install -y \
 python3.10 \
 python3.10-distutils \
-python3-pip \
+curl \
 git \
-build-essential \
-python3-dev \
-libyaml-dev
+software-properties-common
 
 RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && python3.10 get-pip.py
 
