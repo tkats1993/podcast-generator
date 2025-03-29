@@ -1,15 +1,9 @@
 FROM ubuntu:latest
 
 RUN apt-get update && apt-get install -y \
-python3.10 \
-python3.10-distutils \
-curl \
-git \
-software-properties-common
-
-RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && python3.10 get-pip.py
-
-RUN python3.10 -m pip install --upgrade pip 
+  python3.10 \
+  python3-pip \
+  git 
 
 RUN pip3 install PyYAML
 
