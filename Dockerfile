@@ -3,12 +3,12 @@ FROM ubuntu:latest
 RUN apt-get update && apt-get install -y \
   python3.10 \
   python3-pip \
-  git
+  git \
   build-essential \
   python3-dev
 
 RUN python3.10 -m pip install --upgrade pip 
- 
+
 RUN pip3 install PyYAML
 
 COPY feed.py /usr/bin/feed.py
