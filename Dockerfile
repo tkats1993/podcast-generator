@@ -2,17 +2,12 @@ FROM ubuntu:latest
 
 RUN apt-get update && apt-get install -y \
     python3.10 \
-    python3.10-distutils \
     python3-pip \
-    curl \
-    git \
-    software-properties-common
+    git 
 
-# Αναβάθμιση pip για την Python 3.10
 RUN python3.10 -m pip install --upgrade pip
 
-# Εγκατάσταση PyYAML
-RUN python3.10 -m pip install PyYAML
+RUN pip3 inastall PyYAML
 
 COPY feed.py /usr/bin/feed.py
 COPY entrypoint.sh /entrypoint.sh
